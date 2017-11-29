@@ -100,7 +100,7 @@ class App extends Component {
       // `A有 ${arr[0]} 個, B有 ${arr[1]} 個, C有 ${arr[2]} 個, D有 ${arr[3]} 個`
       p.fullResult = rs;
       
-      axios.post('http://c1495616.com/api/users',{
+      axios.post('http://c1495616.com:9999/api/users',{
         userName:p.userName,
         a:p.a,
         b:p.b,
