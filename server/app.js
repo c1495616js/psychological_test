@@ -4,7 +4,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
 //database
-mongoose.connect('mongodb://localhost:27017/young');
+mongoose.connect('mongodb://localhost:28017/young');
 const userSchema = new Schema({
   userName:String,
   result:String,
