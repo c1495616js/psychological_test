@@ -26,6 +26,7 @@ class App extends Component {
       "d":[]
     };
     this.handler = this.handler.bind(this);
+    this.isLock = false;
   }
   changeName(e){
     let k = {...this.state};
@@ -33,6 +34,9 @@ class App extends Component {
     this.setState(k);
   }
   handler(selected){
+    if(this.isLock) return;
+    this.isLock = true;
+
     let p = {...this.state};
     let {q} = this.state;
     p[selected].push(q+1);
@@ -96,7 +100,7 @@ class App extends Component {
       // `A有 ${arr[0]} 個, B有 ${arr[1]} 個, C有 ${arr[2]} 個, D有 ${arr[3]} 個`
       p.fullResult = rs;
       
-      axios.post('http://localhost:9000/api/users',{
+      axios.post('http://a92651c8.ngrok.io/api/users',{
         userName:p.userName,
         a:p.a,
         b:p.b,
@@ -113,6 +117,7 @@ class App extends Component {
       p.qObj = tableData[q];      
     }
     setTimeout(()=>{
+      this.isLock = false;
       this.setState(p);
     },500)
     
@@ -125,43 +130,47 @@ class App extends Component {
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to 性向測驗</h1>
-          </header>      
-        </div>
-        <div className="textField" style={{width:'200px',margin:'20px auto'}}>
-          <MuiThemeProvider> 
-            <TextField 
-              floatingLabelFixed={false}
-              floatingLabelText="請輸入姓名"
-              onChange={this.changeName.bind(this)}
-            />
-          </MuiThemeProvider> 
-        </div>
+            <h1 className="App-title">六藝-數 性向測驗</h1>
+          </header>  
 
-        {
-          this.state.userName.length > 1 ? <div className="content">
-          <strong style={{
-            width: '100px',
-            margin: '20px auto',
-            color:'red',
-            display:'block',
-            fontSize:'20px'
-        }}>
-            {
-              this.state.q != tableData.length ?
-              `第 ${this.state.q+1} 題` :
-              ''          
-            }
-          </strong>
-          {
-            this.state.q === tableData.length ?  <p>{`恭喜您已填完40題測驗，測驗結果顯示出您是 ${this.state.fullResult}`}</p> :           
-              <MuiThemeProvider>                
-                <Radio data={this.state.qObj} name={this.state.q} handler={this.handler} />                                                                                                 
-              </MuiThemeProvider>
-          }                                                                          
+          <div className="textField" style={{width:'200px',margin:'20px auto'}}>
+            <MuiThemeProvider> 
+              <TextField 
+                floatingLabelFixed={false}
+                floatingLabelText="請輸入姓名"
+                onChange={this.changeName.bind(this)}
+              />
+            </MuiThemeProvider> 
+          </div> 
           
-        </div> : <div />
-        }
+          {
+            this.state.userName.length > 1 ? <div className="content" style={{width:'50%',margin:'10px auto'}}>
+            <strong style={{
+              width: '100px',
+              margin: '20px auto',
+              color:'red',
+              display:'block',
+              fontSize:'20px'
+          }}>
+              {
+                this.state.q != tableData.length ?
+                `第 ${this.state.q+1} 題` :
+                ''          
+              }
+            </strong>
+            {
+              this.state.q === tableData.length ?  <p>{`恭喜您已填完40題測驗，測驗結果顯示出您是 ${this.state.fullResult}`}</p> :           
+                <MuiThemeProvider>                
+                  <Radio data={this.state.qObj} name={this.state.q} handler={this.handler} />                                                                                                 
+                </MuiThemeProvider>
+            }                                                                          
+            
+          </div> : <div />
+          }
+        </div>
+        
+
+        
         
         
       </div>

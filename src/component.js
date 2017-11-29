@@ -14,11 +14,11 @@ export default class Radio extends Component {
     // const i = this.props.named;
     return(
       
-        <RadioButtonGroup  valueSelected={this.props.name.toString()} style={{ display: 'flex',padding:'10px'}} name={this.props.name.toString()} onChange={this.change.bind(this)}>                 
-          <RadioButton  value="a" label={`A: ${a}`} />                  
-          <RadioButton  value="b" label={`B: ${b}`}/>
-          <RadioButton  value="c" label={`C: ${c}`}/>
-          <RadioButton  value="d" label={`D: ${d}`}/>                  
+        <RadioButtonGroup  valueSelected={this.props.name.toString()} style={{ display: 'block',padding:'10px'}} name={this.props.name.toString()} onChange={this.change.bind(this)}>                 
+          <RadioButton  value="a" label={`A: ${a}`} style={{ margin:'10px auto'}} />                  
+          <RadioButton  value="b" label={`B: ${b}`} style={{ margin:'10px auto'}}/>
+          <RadioButton  value="c" label={`C: ${c}`} style={{ margin:'10px auto'}}/>
+          <RadioButton  value="d" label={`D: ${d}`} style={{ margin:'10px auto'}}/>                  
         </RadioButtonGroup>  
       
     ) 

@@ -48,6 +48,20 @@ router.route('/users')
 
     });
 
+router.route('/all').get(function (req, res) {
+  
+  User.find({},function(err, users) {
+    // var userMap = {};
+
+    // users.forEach(function(user) {
+    //   userMap[user._id] = user;
+    // });
+
+    // res.send(userMap);
+    res.json(users);  
+  });
+})
+
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 app.use('/api', router);

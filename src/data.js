@@ -243,6 +243,6 @@ const tableData = [
 ];
 
 let resultData = [...tableData];
-resultData = resultData.slice(0,3);
+resultData = resultData.slice(0,40);
 
 export default resultData;
