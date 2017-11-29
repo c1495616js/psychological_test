@@ -242,4 +242,7 @@ const tableData = [
   
 ];
 
-export default tableData;
+let resultData = [...tableData];
+resultData = resultData.slice(0,3);
+
+export default resultData;
