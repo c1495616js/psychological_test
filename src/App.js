@@ -8,6 +8,7 @@ import TextField from 'material-ui/TextField';
 import tableData from './data';
 import axios from 'axios';
 
+
 // tableData.map((choice, i) => {                
 //   return (                    
 //     <Radio data={choice}  key={i} named={i} handler={this.handler}/>                    
@@ -131,8 +132,7 @@ class App extends Component {
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">六藝-數 性向測驗</h1>
-          </header>  
-
+          </header>            
           <div className="textField" style={{width:'200px',margin:'20px auto'}}>
             <MuiThemeProvider> 
               <TextField 
