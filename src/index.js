@@ -6,8 +6,28 @@ import registerServiceWorker from './registerServiceWorker';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-
+import Question from './question';
+import Users from './Users';
+import {
+  HashRouter,
+  Route,
+  Link
+} from 'react-router-dom';
 //injectTapEventPlugin();
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+const Root = () => {
+  return (
+    <HashRouter>
+      <div>      
+        <App>
+          <Route path="/" exact component={Question}/>
+          <Route path="/list" component={Users}/>
+        </App>             
+      </div>
+    </HashRouter>
+  )
+} 
+
+ReactDOM.render(Root(), document.getElementById('root'));
 registerServiceWorker();
