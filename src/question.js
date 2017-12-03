@@ -101,7 +101,7 @@ class Question extends Component {
       // `A有 ${arr[0]} 個, B有 ${arr[1]} 個, C有 ${arr[2]} 個, D有 ${arr[3]} 個`
       p.fullResult = rs;
       
-      axios.post('http://c1495616.com:9999/api/users',{
+      axios.post('http://192.168.2.102:9999/api/users',{
         userName:p.userName,
         a:p.a,
         b:p.b,
@@ -156,7 +156,7 @@ class Question extends Component {
               }
             </strong>
             {
-              this.state.q === tableData.length ?  <p>{`恭喜您已填完40題測驗，測驗結果顯示出您是 ${this.state.fullResult}`}</p> :           
+              this.state.q === tableData.length ?  <div><p>{`恭喜您已填完40題測驗，測驗結果顯示出您是`}</p><strong style={{color:'red'}}>{this.state.result}</strong><br/><p>{ `${this.state.fullResult}`}</p></div> :           
                 <MuiThemeProvider>                
                   <Radio data={this.state.qObj} name={this.state.q} handler={this.handler} />                                                                                                 
                 </MuiThemeProvider>

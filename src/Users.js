@@ -17,7 +17,7 @@ export default class Users extends Component{
     this.state = {data:[]};
   }
   componentDidMount(){
-    const url = 'http://c1495616.com:9999/api/all';
+    const url = 'http://192.168.2.102:9999/api/all';
     axios.get(url).then((res)=>{
       // console.log(res.data);
       this.setState({data:res.data});
@@ -51,7 +51,7 @@ export default class Users extends Component{
                 </TableHeaderColumn>
               </TableRow>  
             </TableHeader>
-            <TableBody>
+            <TableBody preScanRows={true}>
               {
                 this.state.data.map((each,index) => {
                   return (

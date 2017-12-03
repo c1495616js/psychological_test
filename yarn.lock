@@ -3922,6 +3922,10 @@ loader-utils@^1.0.2, loader-utils@^1.1.0:
     emojis-list "^2.0.0"
     json5 "^0.5.0"
 
+local-ip@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/local-ip/-/local-ip-2.0.0.tgz#28fb7105df418506312462808daa6c8f8f2578dc"
+
 locate-path@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/locate-path/-/locate-path-2.0.0.tgz#2b568b265eec944c6d9c0de9c3dbbbca0354cd8e"

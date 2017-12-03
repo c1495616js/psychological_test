@@ -3,6 +3,10 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
+
+var iface = 'en0';
+var localip = require('local-ip')(iface);
+console.log('My local ip address on ' + iface + ' is ' + localip);
 //database
 mongoose.connect('mongodb://localhost:27017/young');
 const userSchema = new Schema({

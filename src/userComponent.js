@@ -21,12 +21,12 @@ export default class UserTr extends Component {
     return(
       
         <TableRow  key={this.props.key}>                 
-          <TableRowColumn>{each.userName}</TableRowColumn>                  
-          <TableRowColumn>{each.result}</TableRowColumn>
-          <TableRowColumn>{each.a.length}</TableRowColumn>
-          <TableRowColumn>{each.b.length}</TableRowColumn>
-          <TableRowColumn>{each.c.length}</TableRowColumn>
-          <TableRowColumn>{each.d.length}</TableRowColumn>
+          <TableRowColumn style={{align:'center'}}>{each.userName}</TableRowColumn>                  
+          <TableRowColumn style={{align:'center'}}>{each.result}</TableRowColumn>
+          <TableRowColumn style={{align:'center'}}>{each.a.length}</TableRowColumn>
+          <TableRowColumn style={{align:'center'}}>{each.b.length}</TableRowColumn>
+          <TableRowColumn style={{align:'center'}}>{each.c.length}</TableRowColumn>
+          <TableRowColumn style={{align:'center'}}>{each.d.length}</TableRowColumn>
         </TableRow>  
       
     ) 
